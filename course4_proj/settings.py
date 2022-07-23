@@ -43,6 +43,7 @@ class Dev(Configuration):
     # Application definition
 
     INSTALLED_APPS = [
+        'django_celery_results',
         'gh',
         'movies',
         'django.contrib.admin',
@@ -174,3 +175,7 @@ class Dev(Configuration):
     }
 
     OMDB_KEY = "d700b77c"
+
+
+    CELERY_RESULT_BACKEND = "django-db"
+    CELERY_BROKER_URL = "redis://localhost:6379/0"
